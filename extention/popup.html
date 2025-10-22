@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      margin-top: 0;
+      color: #065fd4;
+    }
+    #videoInfo {
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+    #videoTitle {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #saveBtn {
+      background: #065fd4;
+      color: white;
+    }
+    #saveBtn:hover {
+      background: #0551b8;
+    }
+    #loadBtn {
+      background: #f1f1f1;
+      color: #030303;
+    }
+    #loadBtn:hover {
+      background: #e0e0e0;
+    }
+    #status {
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 12px;
+      display: none;
+    }
+    #status.success {
+      background: #d4edda;
+      color: #155724;
+    }
+    #status.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    #notesList {
+      margin-top: 15px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .note-item {
+      background: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      border-left: 3px solid #065fd4;
+    }
+    .note-timestamp {
+      color: #065fd4;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .note-timestamp:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>📝 YouTube Notes</h2>
+
+  <div id="videoInfo">
+    <div id="videoTitle">Loading video info...</div>
+    <div id="timestamp"></div>
+  </div>
+
+  <textarea id="noteText" placeholder="Write your note here..."></textarea>
+
+  <div class="button-group">
+    <button id="saveBtn">Save Note</button>
+    <button id="loadBtn">Load Notes</button>
+  </div>
+
+  <div id="status"></div>
+
+  <div id="notesList"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
